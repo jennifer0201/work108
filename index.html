@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script>
+        function caculate(){
+                var count=0;
+                if(request.getParameter("tiankong1").match("统一建模语言"))
+                        count+=5;
+                var arr=new Array();
+                arr.push(request.getParameter("tiankong2"));
+                arr.push(request.getParameter("tiankong3"));
+                arr.push(request.getParameter("tiankong4"));
+                for(var i=0;i<arr.length;i++){
+                        if(arr[i]!=arr[i+1]&&arr[i]!=arr[i+2]){
+                                if(arr[i].match("封装性")||arr[i].match("继承性")||arr[i].match("多态性")){
+                                        count+=5;
+                                }
+                        }
+                }
+                var str1=request.getParameter("1"); 
+                var str2=request.getParameter("2"); 
+                var str3=request.getParameter("3"); 
+                var str4=request.getParameter("4"); 
+                if(str1==null) 
+                str1=""; 
+                if(str2==null) 
+                str2=""; 
+                if(str3==null) 
+                str3=""; 
+                if(str4==null) 
+                str4=""; 
+                if(str1.equals("B")) 
+                count+=10;
+                if(str2.equals("A")) 
+                count+=10;
+                if(str3.equals("ABD")) 
+                count+=10;
+                if(str4.equals("ABC")) 
+                count+=10;
+                var a=request.getParameter("a"); 
+                var b=request.getParameter("b");
+                if(a==null) 
+                a=""; 
+                if(b==null) 
+                b="";
+                if(a.equals("√")) 
+                count+=10;
+                if(b.equals("×")) 
+                count+=10;
+                if(request.getParameter("jianshu").match("模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"))
+                count+=20;
+                alert("考试成绩为："+count);
+        }
+</script>
+</head>
+
+<body>
+<h1 class="text-center"><strong>统一建模语言理论测试</strong></h1>
+<h4 class="text-center">考试科目：统一建模语言  时间：100分钟  得分：100</h4>
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-md-4">
+<div class="input-group">
+<span class="input-group-addon">班级</span>
+<input type="text"  >
+</div>
+</div>
+<div class="col-xs-6 col-md-4">
+<div class="input-group">
+    <span class="input-group-addon">姓名</span>
+    <input type="text" >
+</div>
+</div>
+<div class="col-xs-6 col-md-4">
+<div class="input-group">
+        <span class="input-group-addon">学号</span>
+        <input type="text" >
+    </div>
+</div>
+    </div>
+</div>
+<form action="" method="get">
+<div class="container">
+    <div class="row">
+            <div class="col-xs-6 col-md-6"> 
+            <h3><strong>一、填空题（每空5分，共20分）</strong></h3>
+            </div>
+            </div>
+<div class="row">
+<div class="col-xs-4.5 col-md-3">
+   1. UML的中文全称是：
+</div>
+<div class="col-xs-4.5 col-md-3">
+        <div class="input-group">
+                <input type="text" name="tiankong1">
+            </div>
+        </div>
+</div>
+<div style="padding: 10px 0px 0px;">
+<div class="row">
+    <div class="col-xs-4.5 col-md-3">
+        2. 对象最突出的特征是：
+    </div>
+    <div class="col-xs-4.5 col-md-3">
+            <div class="input-group">
+                    <input type="text" name="tiankong2">
+                </div>
+    </div>
+    <div class="col-xs-4.5 col-md-3">
+            <div class="input-group">
+                    <input type="text" name="tiankong3">
+                </div>
+    </div>
+    <div class="col-xs-4.5 col-md-3">
+            <div class="input-group">
+                    <input type="text" name="tiankong4">
+                </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+            <div class="col-xs-6 col-md-6"> 
+                    <h3><strong>二、选择题（每题10分，共20分）</strong></h3>
+            </div>
+            </div>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
+        1. UML与软件工程的关系是
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
+            <div class="input-group">
+                        <input type="radio" name="1" vale="A">
+                        A、UML就是软件工程
+                        </div>
+    </div>
+    <div class="col-xs-6 col-md-6">
+            <div class="input-group">
+                        <input type="radio" name="1" vale="B">
+                        B、UML参与到软件工程中软件开发过程的几个阶段
+                        </div>
+    </div>
+</div>
+<div class="row">
+        <div class="col-xs-6 col-md-6">
+                <div class="input-group">
+                            <input type="radio" name="1" vale="C">
+                            C、UML与软件工程无关
+                            </div>
+        </div>
+        <div class="col-xs-6 col-md-6">
+                <div class="input-group">
+                            <input type="radio" name="1" vale="D">
+                            D、UML是软件工程的一部分
+                            </div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+                2. Java语言支持
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                        <div class="input-group">
+                                    <input type="radio" name="2" vale="A">
+                                    A、单继承
+                                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6">
+                        <div class="input-group">
+                                    <input type="radio" name="2" vale="B">
+                                    B、多继承
+                                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                        <input type="radio" name="2" vale="C">
+                                        C、单继承和多继承都支持
+                                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                        <input type="radio" name="2" vale="D">
+                                        D、单继承和多继承都不支持
+                                        </div>
+                    </div>
+                    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+            <div class="col-xs-6 col-md-6"> 
+                    <h3><strong>三、多选题（每题10分，共20分）</strong></h3>
+            </div>
+            </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+            1. 用例的粒度分为以下那三种：
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-md-6">
+                <div class="input-group">
+                            <input type="checkbox" name="3" value="A">
+                            A、概述级
+                            </div>
+        </div>
+        <div class="col-xs-6 col-md-6">
+                <div class="input-group">
+                            <input type="checkbox" name="3" value="B">
+                            B、需求级
+                            </div>
+        </div>
+    </div>
+    <div class="row">
+            <div class="col-xs-6 col-md-6">
+                    <div class="input-group">
+                                <input type="checkbox" name="3" value="C">
+                                C、用户目标级
+                                </div>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                    <div class="input-group">
+                                <input type="checkbox" name="3" value="D">
+                                D、子功能级
+                                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    2. 类图由以下哪三部分组成
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                        <input type="checkbox" name="4" value="A">
+                                        A、名称(Name)
+                                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                            <div class="input-group">
+                                        <input type="checkbox" name="4" value="B">
+                                        B、属性(Attribute)
+                                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                                <div class="input-group">
+                                            <input type="checkbox" name="4" value="C">
+                                            C、操作(Operation)
+                                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                                <div class="input-group">
+                                            <input type="checkbox" name="5" value="D">
+                                            D、方法(Function)
+                                            </div>
+                        </div>
+                        </div>
+</div>
+
+<div class="container">
+    <div class="row">
+            <div class="col-xs-6 col-md-6"> 
+                    <h3><strong>四、判断题（每题10分，共20分）</strong></h3>
+            </div>
+            </div>
+<div class="row">
+    <div class="col-xs-6 col-md-6"> 
+    用例图只是用于和客户交流和沟通的，用于确定需求。
+    </div>
+    <div class="col-xs-6 col-md-6"> 
+            <input type="radio" name="a" value="√"/>√ <input type="radio" name="a" value="×"/>×
+            </div>
+</div>
+<div class="row">
+        <div class="col-xs-6 col-md-6"> 
+    在状态图中，终止状态在一个状态中允许有任意多个。
+        </div>
+        <div class="col-xs-6 col-md-6"> 
+                <input type="radio" name="b" value="√"/>√ <input type="radio" name="b" value="×"/>×
+                </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+            <div class="col-xs-6 col-md-6"> 
+                    <h3><strong>五、简答题（每题20分，共20分）</strong></h3>
+            </div>
+            </div>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
+            <ol>简述什么是模型以及模型的表现形式？<br/>
+                <textarea name="jianshu" cols="50" rows="8" ></textarea><br/>
+                <input type="button" value="计算分数" onclick="caculate()"/>
+            </ol>
+    </div>
+</div>
+</div>
+</form>
