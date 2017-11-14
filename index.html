@@ -10,7 +10,7 @@
                var ele=document.getElementById("tiankong1").value;
                 if(ele.match("统一建模语言"))
                         count1++;
-                var arr=new Array();
+                        var arr=new Array();
                 arr.push(document.getElementById("tiankong2").value);
                 arr.push(document.getElementById("tiankong3").value);
                 arr.push(document.getElementById("tiankong4").value);
@@ -21,64 +21,65 @@
                                 }
                         }
                 }
-                var rule1='ABD';
-                var rule2='ABC';
                 var check1 = [];
                 var check2 = [];
-                var check3 = [];
-                var check4 = [];
-                var boxs1 = document.getElementById('1'); 
-                var boxs2 = document.getElementById('2');
-                var boxs3 = document.getElementById('3');
-                var boxs4 = document.getElementById('4');
-                var boxs5 = document.getElementById('a');
-                var boxs6 = document.getElementById('b');
-                for(var i=0;i<boxs1.length;i++){
-                if(boxs1[i].checked){
-                        if(boxs1[i].value=='B'){
+                var boxs1 = document.getElementById('sel1');
+                var box1=boxs1.getElementsByTagName('input');
+                var boxs2 = document.getElementById('sel2');
+                var box2=boxs2.getElementsByTagName('input');
+                var boxs3 = document.getElementById('sel3');
+                var box3=boxs3.getElementsByTagName('input');
+                var boxs4 = document.getElementById('sel4');
+                var box4=boxs4.getElementsByTagName('input');
+                var boxs5 = document.getElementById('sel5');
+                var box5=boxs5.getElementsByTagName('input');
+                var boxs6 = document.getElementById('sel6');
+                var box6=boxs6.getElementsByTagName('input');
+                for(var i=0;i<box1.length;i++){
+                if(box1[i].checked==true){
+                        if(box1[i].value.match('B')){
                                 count2++;
                         }
                         }
                 }
-                for(var i=0;i<boxs2.length;i++){
-                if(boxs2[i].checked){
-                        if(boxs2[i].value=='A'){
+                for(var i=0;i<box2.length;i++){
+                if(box2[i].checked==true){
+                        if(box2[i].value.match('A')){
                                 count2++;
                         }
                         }
                 }
-                for(var i=0;i<boxs3.length;i++){
-                if(boxs3[i].checked){
-                check2.push(boxs3[i].value);
+                for(var i=0;i<box3.length;i++){
+                if(box3[i].checked==true){
+                check1.push(box3[i].value);
                         }
-                }
-                for(var i=0;i<boxs4.length;i++){
-                if(boxs4[i].checked){
-                check3.push(boxs4[i].value);
-                        }
-                }
-                if(boxs5.checked){
-                        if(boxs5.value=='√'){
-                                count2++;
-                        }
-                        }
-                if(boxs6.checked){
-                        if(boxs6.value=='×'){
-                                count2++;
-                        }
-                        }
-                for(var i in check2){
-                var str1 = check2.join();   
-                if(str1===rule1){
+                }   
+                if(check1.join().match('A,B,D')){
                 count2++;
                         }
-                }
-                for(var i in check3){
-                var str2 = check3.join();
-                if(str2===rule2){
-                count2++;
+                for(var i=0;i<box4.length;i++){
+                if(box4[i].checked==true){
+                check2.push(box4[i].value);
                         }
                 }
+                if(check2.join().match('A,B,C')){
+                count2++;
+                        }
+                for(var i=0;i<box5.length;i++){
+                        if(box5[i].checked==true){
+                                if(box5[i].value.match('×')){
+                                        count2++;    
+                                }
+                        }
+                }
+                for(var i=0;i<box6.length;i++){
+                        if(box6[i].checked==true){
+                                if(box6[i].value.match('√')){
+                                        count2++;    
+                                }
+                        }
+                        }
+                
                 var ele2=document.getElementById("jianshu").value;
                 if(ele2.match("模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"))
                 count3++;
@@ -112,7 +113,6 @@
 </div>
     </div>
 </div>
-<form action="" method="get">
 <div class="container">
     <div class="row">
             <div class="col-xs-6 col-md-6"> 
@@ -165,32 +165,34 @@
         1. UML与软件工程的关系是
     </div>
 </div>
+<div id='sel1'>
 <div class="row">
     <div class="col-xs-6 col-md-6">
-            <div class="input-group">
-                        <input type="radio" id="1" vale="A">
+            <div class="input-group" >
+                        <input type="radio" name="1" value="A" />
                         A、UML就是软件工程
                         </div>
     </div>
     <div class="col-xs-6 col-md-6">
-            <div class="input-group">
-                        <input type="radio" id="1" vale="B">
+            <div class="input-group" >
+                        <input type="radio" name="1" value="B" />
                         B、UML参与到软件工程中软件开发过程的几个阶段
                         </div>
     </div>
 </div>
 <div class="row">
         <div class="col-xs-6 col-md-6">
-                <div class="input-group">
-                            <input type="radio" id="1" vale="C">
+                <div class="input-group" >
+                            <input type="radio" name="1" value="C" />
                             C、UML与软件工程无关
                             </div>
         </div>
         <div class="col-xs-6 col-md-6">
-                <div class="input-group">
-                            <input type="radio" id="1" vale="D">
+                <div class="input-group" >
+                            <input type="radio" name="1"  value="D"/>
                             D、UML是软件工程的一部分
                             </div>
+        </div>
         </div>
         </div>
         <div class="row">
@@ -198,34 +200,36 @@
                 2. Java语言支持
             </div>
         </div>
+        <div id='sel2'>
             <div class="row">
                 <div class="col-xs-6 col-md-6">
-                        <div class="input-group">
-                                    <input type="radio" id="2" vale="A">
+                        <div class="input-group" >
+                                    <input type="radio" name="2" value="A" />
                                     A、单继承
                                     </div>
                 </div>
                 <div class="col-xs-6 col-md-6">
-                        <div class="input-group">
-                                    <input type="radio" id="2" vale="B">
+                        <div class="input-group" >
+                                    <input type="radio" name="2" value="B" />
                                     B、多继承
                                     </div>
                 </div>
             </div>
             <div class="row">
                     <div class="col-xs-6 col-md-6">
-                            <div class="input-group">
-                                        <input type="radio" id="2" vale="C">
+                            <div class="input-group" >
+                                        <input type="radio" name="2" value="C" /> 
                                         C、单继承和多继承都支持
                                         </div>
                     </div>
                     <div class="col-xs-6 col-md-6">
-                            <div class="input-group">
-                                        <input type="radio" id="2" vale="D">
+                            <div class="input-group" >
+                                        <input type="radio" name="2" value="D" />
                                         D、单继承和多继承都不支持
                                         </div>
                     </div>
                     </div>
+                </div>
 </div>
 
 <div class="container">
@@ -239,67 +243,71 @@
             1. 用例的粒度分为以下那三种：
         </div>
     </div>
+    <div id='sel3'>
     <div class="row">
         <div class="col-xs-6 col-md-6">
-                <div class="input-group">
-                            <input type="checkbox" id="3" value="A">
+                <div class="input-group" > 
+                            <input type="checkbox" name="3" value="A" />
                             A、概述级
                             </div>
         </div>
         <div class="col-xs-6 col-md-6">
-                <div class="input-group">
-                            <input type="checkbox" id="3" value="B">
+                <div class="input-group" >
+                            <input type="checkbox" name="3" value="B" />
                             B、需求级
                             </div>
         </div>
     </div>
     <div class="row">
             <div class="col-xs-6 col-md-6">
-                    <div class="input-group">
-                                <input type="checkbox" id="3" value="C">
+                    <div class="input-group" >
+                                <input type="checkbox" name="3" value="C" />
                                 C、用户目标级
                                 </div>
             </div>
             <div class="col-xs-6 col-md-6">
-                    <div class="input-group">
-                                <input type="checkbox" id="3" value="D">
+                    <div class="input-group" >
+                                <input type="checkbox" name="3" value="D" />
                                 D、子功能级
                                 </div>
             </div>
             </div>
+        </div>
             <div class="row">
                 <div class="col-xs-6 col-md-6">
                     2. 类图由以下哪三部分组成
                 </div>
             </div>
+            <div id='sel4'>
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
-                            <div class="input-group">
-                                        <input type="checkbox" id="4" value="A">
+                            <div class="input-group" >
+                                        <input type="checkbox" name="4" value="A" />
                                         A、名称(Name)
                                         </div>
                     </div>
                     <div class="col-xs-6 col-md-6">
-                            <div class="input-group">
-                                        <input type="checkbox" id="4" value="B">
+                            <div class="input-group" >
+                                        <input type="checkbox" name="4" value="B" />
                                         B、属性(Attribute)
                                         </div>
                     </div>
                 </div>
                 <div class="row">
                         <div class="col-xs-6 col-md-6">
-                                <div class="input-group">
-                                            <input type="checkbox" id="4" value="C">
+                                <div class="input-group" >
+                                            <input type="checkbox" name="4" value="C" />
                                             C、操作(Operation)
                                             </div>
                         </div>
                         <div class="col-xs-6 col-md-6">
-                                <div class="input-group">
-                                            <input type="checkbox" id="4" value="D">
+                                <div class="input-group" >
+                                            <input type="checkbox" name="4" value="D" />
                                             D、方法(Function)
                                             </div>
                         </div>
                         </div>
+                </div>
 </div>
 
 <div class="container">
@@ -312,16 +320,16 @@
     <div class="col-xs-6 col-md-6"> 
     用例图只是用于和客户交流和沟通的，用于确定需求。
     </div>
-    <div class="col-xs-6 col-md-6"> 
-            <input type="radio" name="a" value="√"/>√ <input type="radio" id="a" value="×"/>×
+    <div class="col-xs-6 col-md-6" id='sel5'> 
+            <input type="radio" name="a" value='√'/>√ <input type="radio" name="a" value='×'/>×
             </div>
 </div>
 <div class="row">
         <div class="col-xs-6 col-md-6"> 
     在状态图中，终止状态在一个状态中允许有任意多个。
         </div>
-        <div class="col-xs-6 col-md-6"> 
-                <input type="radio" name="b" value="√"/>√ <input type="radio" id="b" value="×"/>×
+        <div class="col-xs-6 col-md-6" id='sel6'> 
+                <input type="radio" name="b" value='√'/>√ <input type="radio" name="b" value='×'/>×
                 </div>
     </div>
 </div>
@@ -341,4 +349,4 @@
     </div>
 </div>
 </div>
-</form>
+</body>
