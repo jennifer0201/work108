@@ -2,89 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<script>
-        function caculate(){
-               var count1=0;
-               var count2=0;
-               var count3=0;
-               var ele=document.getElementById("tiankong1").value;
-                if(ele.match("统一建模语言"))
-                        count1++;
-                        var arr=new Array();
-                arr.push(document.getElementById("tiankong2").value);
-                arr.push(document.getElementById("tiankong3").value);
-                arr.push(document.getElementById("tiankong4").value);
-                for(var i in arr){
-                        if(arr[i]!=arr[i+1]&&arr[i]!=arr[i+2]){
-                                if(arr[i].match("封装性")||arr[i].match("继承性")||arr[i].match("多态性")){
-                                        count1++;
-                                }
-                        }
-                }
-                var check1 = [];
-                var check2 = [];
-                var boxs1 = document.getElementById('sel1');
-                var box1=boxs1.getElementsByTagName('input');
-                var boxs2 = document.getElementById('sel2');
-                var box2=boxs2.getElementsByTagName('input');
-                var boxs3 = document.getElementById('sel3');
-                var box3=boxs3.getElementsByTagName('input');
-                var boxs4 = document.getElementById('sel4');
-                var box4=boxs4.getElementsByTagName('input');
-                var boxs5 = document.getElementById('sel5');
-                var box5=boxs5.getElementsByTagName('input');
-                var boxs6 = document.getElementById('sel6');
-                var box6=boxs6.getElementsByTagName('input');
-                for(var i=0;i<box1.length;i++){
-                if(box1[i].checked==true){
-                        if(box1[i].value.match('B')){
-                                count2++;
-                        }
-                        }
-                }
-                for(var i=0;i<box2.length;i++){
-                if(box2[i].checked==true){
-                        if(box2[i].value.match('A')){
-                                count2++;
-                        }
-                        }
-                }
-                for(var i=0;i<box3.length;i++){
-                if(box3[i].checked==true){
-                check1.push(box3[i].value);
-                        }
-                }   
-                if(check1.join().match('A,B,D')){
-                count2++;
-                        }
-                for(var i=0;i<box4.length;i++){
-                if(box4[i].checked==true){
-                check2.push(box4[i].value);
-                        }
-                }
-                if(check2.join().match('A,B,C')){
-                count2++;
-                        }
-                for(var i=0;i<box5.length;i++){
-                        if(box5[i].checked==true){
-                                if(box5[i].value.match('×')){
-                                        count2++;    
-                                }
-                        }
-                }
-                for(var i=0;i<box6.length;i++){
-                        if(box6[i].checked==true){
-                                if(box6[i].value.match('√')){
-                                        count2++;    
-                                }
-                        }
-                        }
-                
-                var ele2=document.getElementById("jianshu").value;
-                if(ele2.match("模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式。可以是物理实体；可以是某种图形；或者是一种数学表达式。"))
-                count3++;
-                alert("考试成绩为："+(count1*5+count2*10+count3*20));
-        }
+<script src="a.js">
 </script>
 </head>
 
@@ -321,7 +239,7 @@
     用例图只是用于和客户交流和沟通的，用于确定需求。
     </div>
     <div class="col-xs-6 col-md-6" id='sel5'> 
-            <input type="radio" name="a" value='√'/>√ <input type="radio" name="a" value='×'/>×
+            <input type="radio" name="5" value='true'/>√ <input type="radio" name="5" value='false'/>×
             </div>
 </div>
 <div class="row">
@@ -329,7 +247,7 @@
     在状态图中，终止状态在一个状态中允许有任意多个。
         </div>
         <div class="col-xs-6 col-md-6" id='sel6'> 
-                <input type="radio" name="b" value='√'/>√ <input type="radio" name="b" value='×'/>×
+                <input type="radio" name="6" value='true'/>√ <input type="radio" name="6" value='false'/>×
                 </div>
     </div>
 </div>
